@@ -10,6 +10,12 @@ pipeline{
         
         stages{
 
+	      stage('Git Checkout'){
+                   steps{
+                        git credentialsId: 'git_ssh', url: 'https://github.com/Navya-Danvi/sample-web-application.git'
+                   }
+              }
+		
               stage('maven build'){
                   steps{
                       script{
